@@ -1,0 +1,1 @@
+This is a basic applicaiton to enable video chat without audio by using cv2 and socket
