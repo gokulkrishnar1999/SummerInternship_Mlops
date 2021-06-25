@@ -1,0 +1,24 @@
+<label for="cmd" style="color:black"><b>sahith_for_task7</b></label>
+<input type="text" id="cmd" />
+<button id="btn" onclick="linux();">submit</button>
+<pre><div id='out'></div></pre>
+<script>
+  var inp = document.getElementById("cmd");
+  inp.addEventListener("keyup", function(event){
+    if(event.keyCode == 13){
+      event.preventDefault();
+      document.getElementById("btn").click();i
+    }
+  });
+</script>
+<script>
+  function linux(){
+    var xhr = new XMLHttpRequest();
+    cmd = document.getElementById("cmd").value;
+    xhr.open("GET",`http://192.168.0.0/cgi-bin/file.py?q=${cmd}`,false);
+    xhr.send();
+    var output = xhr.responseText;
+    document.getElementById("out").innerHTML = output;
+  }
+</script>
+
